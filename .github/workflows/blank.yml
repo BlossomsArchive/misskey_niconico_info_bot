@@ -1,0 +1,10 @@
+name: test_action
+
+on: [ workflow_dispatch ]
+
+jobs:
+  check_post-content:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo Hello, world!
