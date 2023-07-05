@@ -27,6 +27,6 @@ jobs:
         with:
           name: test
           # 保存するファイル
-          path: test-artifact.txt
+          path: test.txt
           # 保存期間（日）
           retention-days: 1
