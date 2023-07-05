@@ -8,4 +8,4 @@ g = open("test.txt", "w")
 g.write("It has changed")
 g.close
 
-print("It has changed")
+print("echo \"Hello, World\" > test.txt")
