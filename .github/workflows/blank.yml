@@ -1,5 +1,5 @@
 ---
-name: Post_Note_Beta
+name: Post_Note
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
           MISSKEY_SERVER_ADDRESS: ${{ secrets.MISSKEY_SERVER_ADDRESS }}
           MISSKEY_TOKEN: ${{ secrets.MISSKEY_TOKEN }}
         run: |
-          python niconico_info_bot_beta.py
+          python niconico_info_bot.py
           cat niconico_info_feed.txt
 
       - name: Update niconico_info_feed.txt
