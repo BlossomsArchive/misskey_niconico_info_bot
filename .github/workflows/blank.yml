@@ -24,8 +24,8 @@ jobs:
           MISSKEY_SERVER_ADDRESS: ${{ secrets.MISSKEY_SERVER_ADDRESS }}
           MISSKEY_TOKEN: ${{ secrets.MISSKEY_TOKEN }}
         run: |
-          python test.py
-          cat test.txt
+          python niconico_info_bot_beta.py
+          cat niconico_info_feed.txt
 
       - name: Update niconico_info_feed.txt
         run: |
