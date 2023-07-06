@@ -37,8 +37,8 @@ try:
             api = Misskey(misskey_address)
             api.token = misskey_token
 
-            #api.notes_create(text=post_text)
-            print(post_text)
+            api.notes_create(text=post_text)
+            print(post_text+"\n-----------------------------------------------")
             time.sleep(10)
 
             i += 1
