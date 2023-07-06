@@ -22,6 +22,7 @@ try:
             g = open("niconico_info_feed.txt", "w")
             g.write(new_up)
             g.close
+            print("↑ここまでが新着↑")
             break
 
         else:
