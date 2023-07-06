@@ -7,7 +7,8 @@ f.close()
 print(test_content)
 
 g = open("test.txt", "w")
-g.write(datetime.datetime.now())
+now_time = datetime.datetime.now()
+g.write(now_time)
 g.close
 
 print("It has changed")
