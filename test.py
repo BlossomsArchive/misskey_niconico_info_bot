@@ -4,4 +4,8 @@ f.close()
 
 print(test_content)
 
-print("echo \"Hello, World\" > test.txt")
+g = open("test.txt", "w")
+g.write("It has changed")
+g.close
+
+print("It has changed")
