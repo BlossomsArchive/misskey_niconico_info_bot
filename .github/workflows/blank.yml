@@ -1,5 +1,5 @@
 ---
-name: test
+name: Post_Note_Beta
 
 on:
   workflow_dispatch:
@@ -17,13 +17,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install Misskey.py
+          pip install feedparser
 
-      - name: Test Note
+      - name: Create Note Content
+        env:
+          MISSKEY_SERVER_ADDRESS: ${{ secrets.MISSKEY_SERVER_ADDRESS }}
+          MISSKEY_TOKEN: ${{ secrets.MISSKEY_TOKEN }}
         run: |
           python test.py
           cat test.txt
 
-      - name: Update test.txt
+      - name: Update niconico_info_feed.txt
         run: |
           if ! git diff --exit-code --quiet
           then
