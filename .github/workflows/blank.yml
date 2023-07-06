@@ -23,11 +23,10 @@ jobs:
           python test.py
           cat test.txt
 
-      - name: artifact upload
-        uses: actions/upload-artifact@v2.2.0
-        with:
-          name: test
-          # 保存するファイル
-          path: test.txt
-          # 保存期間（日）
-          retention-days: 1
+      - name: Commit and push if changed
+        run: |-
+          git diff
+          git config --global user.name "commit test"
+          git add -A
+          git commit -m "Update test.txt" || exit 0
+          git push
