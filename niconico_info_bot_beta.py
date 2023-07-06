@@ -3,6 +3,7 @@
 import feedparser
 from misskey import Misskey
 import os
+import time
 
 
 f = open("niconico_info_feed.txt", "r")
@@ -37,6 +38,7 @@ try:
 
             #api.notes_create(text=post_text)
             print(post_text)
+            time.sleep(10)
 
             i += 1
 except:
