@@ -13,10 +13,9 @@ f.close()
 entries = feedparser.parse(
     'https://blog.nicovideo.jp/niconews/index.xml')['entries']
 
-new_up = entries[0]['published']
-
 i = 0
 try:
+    new_up = entries[0]['published']
     while (True):
         if entries[i]['published'] == old_up:
             g = open("niconico_info_feed.txt", "w")
