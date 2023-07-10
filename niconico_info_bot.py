@@ -20,7 +20,7 @@ try:
         if entries[i]['published'] == old_up:
             g = open("niconico_info_feed.txt", "w")
             g.write(new_up)
-            g.close
+            g.close()
             print("↑ここまでが新着↑")
             break
 
