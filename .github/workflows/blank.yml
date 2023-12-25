@@ -20,11 +20,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install Misskey.py
           pip install feedparser
+          pip install atproto
 
       - name: Create Note Content
         env:
           MISSKEY_SERVER_ADDRESS: ${{ secrets.MISSKEY_SERVER_ADDRESS }}
           MISSKEY_TOKEN: ${{ secrets.MISSKEY_TOKEN }}
+          BLUESKY_MAIL_ADDRESS: ${{ secrets.BLUESKY_MAIL_ADDRESS }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
         run: |
           python niconico_info_bot.py
           cat niconico_info_feed.txt
