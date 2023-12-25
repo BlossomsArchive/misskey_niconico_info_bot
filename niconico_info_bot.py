@@ -2,6 +2,7 @@
 
 import feedparser
 from misskey import Misskey
+from atproto import Client, models
 import os
 import time
 
@@ -35,8 +36,12 @@ try:
             misskey_token = os.environ.get("MISSKEY_TOKEN")
             api = Misskey(misskey_address)
             api.token = misskey_token
-
             api.notes_create(text=post_text)
+
+            # Bluesky
+            bluesky = Client()
+            bluesky.login(str(os.environ.get("BLUESKY_MAIL_ADDRESS")),str(os.environ.get("BLUESKY_PASSWORD")))
+            bluesky.send_post(post_text)
             print(post_text+"\n-----------------------------------------------")
             time.sleep(10)
 
